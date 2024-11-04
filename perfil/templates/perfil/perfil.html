@@ -1,0 +1,34 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instituto de Visión - Perfil</title>
+    <link rel="stylesheet" href="{% static 'perfil/styles.css' %}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Instituto de Visión</h1>
+            <nav>
+                <a href="#">home</a>
+                <a href="#">support</a>
+                <a href="#">my account</a>
+            </nav>
+        </header>
+        <section class="personal-data">
+            <form method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit">Enviar</button>
+            </form>
+        </section>
+        <section class="tasks">
+            <div class="completed">Completed</div>
+            <div class="upcoming">Active / Upcoming</div>
+        </section>
+        <button class="back-btn">&#8635;</button>
+    </div>
+</body>
+</html>
