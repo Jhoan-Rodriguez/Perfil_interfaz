@@ -8,15 +8,19 @@
     <link rel="stylesheet" href="{% static 'perfil/styles.css' %}">
 </head>
 <body>
-    <div class="container">
+    <div class="navbar">
         <header>
             <h1>Instituto de Visión</h1>
-            <nav>
-                <a href="#">home</a>
-                <a href="#">support</a>
-                <a href="#">my account</a>
-            </nav>
+            <div>
+                <nav>
+                    <a href="#">home</a>
+                    <a href="#">support</a>
+                    <a href="#">my account</a>
+                </nav>
+            </div>
         </header>
+    </div>
+    <div class="container">
         <section class="personal-data">
             <form method="POST" enctype="multipart/form-data">
                 {% csrf_token %}
@@ -24,11 +28,13 @@
                 <button type="submit">Enviar</button>
             </form>
         </section>
+        <button class="back-btn">&#8635;</button>
+    </div>
+    <div class="container_2">
         <section class="tasks">
             <div class="completed">Completed</div>
             <div class="upcoming">Active / Upcoming</div>
         </section>
-        <button class="back-btn">&#8635;</button>
     </div>
 </body>
 </html>
